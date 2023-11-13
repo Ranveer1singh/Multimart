@@ -8,7 +8,8 @@ import { motion } from "framer-motion";
 import Services from "../services/Services";
 import ProductList from "../component/UI/ProductList";
 import products from "../assets/data/products";
-import counterimg from "../assets/images/counter-timer-img.png"
+import counterimg from "../assets/images/counter-timer-img.png";
+import Clock from "../component/UI/Clock";
 
 const Home = () => {
   const [trendingProducts, setTrendingProducts] = useState([]);
@@ -17,13 +18,13 @@ const Home = () => {
 
   useEffect(() => {
     const filteredTrendingProducts = products.filter(
-      (item) => (item.category == "chair")
+      (item) => item.category == "chair"
     );
     const filteredBestsalseProducts = products.filter(
-      (item) => (item.category == "sofa")
+      (item) => item.category == "sofa"
     );
     setTrendingProducts(filteredTrendingProducts);
-    setBestsales(filteredBestsalseProducts)
+    setBestsales(filteredBestsalseProducts);
   }, []);
   return (
     <Helmet title={"Home"}>
@@ -65,7 +66,7 @@ const Home = () => {
       </section>
       <section className="best__sales">
         <Container>
-        <Row>
+          <Row>
             <Col lg="12" className="text-center">
               <h2 className="section__title">Best Sales</h2>
             </Col>
@@ -76,9 +77,16 @@ const Home = () => {
       <section className="timer__count">
         <Container>
           <Row>
-            <Col lg='6' md='6'>
+            <Col lg="6" md="6">
+              <div className="clock__top-content">
+                <h4 className="text-white fs-6 mb-2">Limited Offers</h4>
+                <h3 className="text-white fs-5 mb-3">Quality Armchair</h3>
+
+              </div>
+              <Clock />
+              <motion.button whileTap={{scale:1.2}} className="buy__btn store__btn"><Link to="/shop">Visit Store</Link></motion.button>
             </Col>
-            <Col lg='6' md='6' className="text-end">
+            <Col lg="6" md="6" className="text-end">
               <img src={counterimg} alt="" />
             </Col>
           </Row>
