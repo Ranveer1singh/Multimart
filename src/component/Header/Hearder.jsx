@@ -44,7 +44,7 @@ const Hearder = () => {
             <div className="logo">
               <img src={Logo} alt="logo" />
               <div>
-                <h1>MultiMart</h1>
+                <h1>MayurMart</h1>
                 {/* <p>Since 1990</p> */}
               </div>
             </div>
