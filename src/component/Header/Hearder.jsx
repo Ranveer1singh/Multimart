@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useRef, useEffect} from "react";
 import "./Header.css";
 import { Container, NavItem, Row } from "reactstrap";
 import Logo from "../../assets/images/eco-logo.png";
@@ -21,8 +21,23 @@ const nav__links = [
   },
 ];
 const Hearder = () => {
+  const HeaderRef = useRef(null)
+  const stickyHeaderfunc = ()=>{
+    window.addEventListener('scroll',()=>{
+      if(document.body.scrollTop > 80 || document.documentElement.scrollTop > 80){
+        HeaderRef.current.classList.add('sticky__header')
+      }else{
+        HeaderRef.current.classList.remove('sticky__header')
+        return ()=> window.removeEventListener('scroll',stickyHeaderfunc)
+      }
+    })
+  }
+
+  useEffect(()=>{
+    stickyHeaderfunc()
+  })
   return (
-    <header className="header">
+    <header className="header" ref={HeaderRef}>
       <Container>
         <Row>
           <div className="nav__wrapper">
@@ -30,7 +45,7 @@ const Hearder = () => {
               <img src={Logo} alt="logo" />
               <div>
                 <h1>MultiMart</h1>
-                <p>Since 1990</p>
+                {/* <p>Since 1990</p> */}
               </div>
             </div>
             <div className="navigation">

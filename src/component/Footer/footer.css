@@ -1,0 +1,30 @@
+.footer{
+    padding-top: 60px;
+    padding-bottom: 30px;
+    background-color: var(--primary-color);
+}
+.footer__text{
+    line-height: 30px;
+    color: #ffffffb4;
+}
+.footer__quick-links ul li{
+    background: transparent;
+}
+.footer__quick-links ul li a{
+    color: #ffffffb4;
+}
+.quick__links-title{
+    font-size: 1.1rem;
+    color: #fff;
+    margin-bottom: 20px;
+}
+.footer__contact li span ,
+.footer__contact li p {
+    color:#ffffffb4;
+}
+.footer__contact li span{
+    font-size: 1.2rem;
+}
+.footer__contact li p {
+    font-size: 0.9rem;
+}

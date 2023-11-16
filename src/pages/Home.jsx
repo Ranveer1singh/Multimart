@@ -14,6 +14,10 @@ import Clock from "../component/UI/Clock";
 const Home = () => {
   const [trendingProducts, setTrendingProducts] = useState([]);
   const [bestsales, setBestsales] = useState([]);
+  const [mobileProduct, setMobileProducts] = useState([]);
+  const[wirelessProduct, setWirelessProducts] = useState([]);
+  const[popularProducts, setPopularProducts] = useState([]);
+
   const year = new Date().getFullYear();
 
   useEffect(() => {
@@ -23,8 +27,20 @@ const Home = () => {
     const filteredBestsalseProducts = products.filter(
       (item) => item.category == "sofa"
     );
+    const filteredMobileProducts = products.filter(
+      (item) => item.category == "mobile"
+    );
+    const filteredWirelessProducts = products.filter(
+      (item) => item.category == "wireless"
+    );
+    const filteredPopularProducts = products.filter(
+      (item) => item.category == "watch"
+    );
     setTrendingProducts(filteredTrendingProducts);
     setBestsales(filteredBestsalseProducts);
+    setWirelessProducts(filteredWirelessProducts);
+    setMobileProducts(filteredMobileProducts);
+    setPopularProducts(filteredPopularProducts);
   }, []);
   return (
     <Helmet title={"Home"}>
@@ -89,6 +105,28 @@ const Home = () => {
             <Col lg="6" md="6" className="text-end">
               <img src={counterimg} alt="" />
             </Col>
+          </Row>
+        </Container>
+      </section>
+
+      <section className="new__arrivals">
+        <Container>
+          <Row>
+          <Col lg="12" className="text-center mb-5">
+              <h2 className="section__title">New Arrivals</h2>
+            </Col>
+            <ProductList data={mobileProduct} />
+            <ProductList data={wirelessProduct} />
+          </Row>
+        </Container>
+      </section>
+      <section className="popular__categories">
+      <Container>
+          <Row>
+          <Col lg="12" className="text-center mb-5">
+              <h2 className="section__title">Popular Categories</h2>
+            </Col>
+            <ProductList data={popularProducts} />
           </Row>
         </Container>
       </section>
