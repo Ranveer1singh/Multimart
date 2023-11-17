@@ -14,6 +14,8 @@ import Clock from "../component/UI/Clock";
 const Home = () => {
   const [trendingProducts, setTrendingProducts] = useState([]);
   const [bestsales, setBestsales] = useState([]);
+  // const[bed,setBed] = useState([])
+  // const[table,setTable] = useState([])
   const [mobileProduct, setMobileProducts] = useState([]);
   const[wirelessProduct, setWirelessProducts] = useState([]);
   const[popularProducts, setPopularProducts] = useState([]);
@@ -27,6 +29,12 @@ const Home = () => {
     const filteredBestsalseProducts = products.filter(
       (item) => item.category == "sofa"
     );
+    // const filteredBedProducts = products.filter(
+    //   (item) => item.category == "bed"
+    // );
+    // const filteredTableProducts = products.filter(
+    //   (item) => item.category == "table"
+    // );
     const filteredMobileProducts = products.filter(
       (item) => item.category == "mobile"
     );
@@ -38,6 +46,8 @@ const Home = () => {
     );
     setTrendingProducts(filteredTrendingProducts);
     setBestsales(filteredBestsalseProducts);
+    // setBed(filteredBedProducts);
+    // setTable(filteredTableProducts);
     setWirelessProducts(filteredWirelessProducts);
     setMobileProducts(filteredMobileProducts);
     setPopularProducts(filteredPopularProducts);
@@ -93,7 +103,7 @@ const Home = () => {
       <section className="timer__count">
         <Container>
           <Row>
-            <Col lg="6" md="6">
+            <Col lg="6" md="12">
               <div className="clock__top-content">
                 <h4 className="text-white fs-6 mb-2">Limited Offers</h4>
                 <h3 className="text-white fs-5 mb-3">Quality Armchair</h3>
@@ -102,7 +112,7 @@ const Home = () => {
               <Clock />
               <motion.button whileTap={{scale:1.2}} className="buy__btn store__btn"><Link to="/shop">Visit Store</Link></motion.button>
             </Col>
-            <Col lg="6" md="6" className="text-end">
+            <Col lg="6" md="12" className="text-end counter__img">
               <img src={counterimg} alt="" />
             </Col>
           </Row>
@@ -112,9 +122,10 @@ const Home = () => {
       <section className="new__arrivals">
         <Container>
           <Row>
-          <Col lg="12" className="text-center mb-5">
-              <h2 className="section__title">New Arrivals</h2>
+          <Col lg="12" className="text-center mb-6">
+              <h2 className="section__title mb-5">New Arrivals</h2>
             </Col>
+            {/* <ProductList data={bed} /> */}
             <ProductList data={mobileProduct} />
             <ProductList data={wirelessProduct} />
           </Row>
@@ -124,8 +135,9 @@ const Home = () => {
       <Container>
           <Row>
           <Col lg="12" className="text-center mb-5">
-              <h2 className="section__title">Popular Categories</h2>
+              <h2 className="section__title mb-4">Popular Categories</h2>
             </Col>
+            {/* <ProductList data={table} /> */}
             <ProductList data={popularProducts} />
           </Row>
         </Container>
