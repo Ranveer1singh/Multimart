@@ -1,0 +1,9 @@
+
+.common__section{
+    background: linear-gradient(#000000ac, #000000ac),url('../assets/images/counter-timer-img.png') no-repeat center center;
+    background-size: contain;
+}
+.common__section h1{
+    color: #fff;
+    font-weight: 600;
+}

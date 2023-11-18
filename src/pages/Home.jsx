@@ -17,8 +17,8 @@ const Home = () => {
   // const[bed,setBed] = useState([])
   // const[table,setTable] = useState([])
   const [mobileProduct, setMobileProducts] = useState([]);
-  const[wirelessProduct, setWirelessProducts] = useState([]);
-  const[popularProducts, setPopularProducts] = useState([]);
+  const [wirelessProduct, setWirelessProducts] = useState([]);
+  const [popularProducts, setPopularProducts] = useState([]);
 
   const year = new Date().getFullYear();
 
@@ -107,10 +107,14 @@ const Home = () => {
               <div className="clock__top-content">
                 <h4 className="text-white fs-6 mb-2">Limited Offers</h4>
                 <h3 className="text-white fs-5 mb-3">Quality Armchair</h3>
-
               </div>
               <Clock />
-              <motion.button whileTap={{scale:1.2}} className="buy__btn store__btn"><Link to="/shop">Visit Store</Link></motion.button>
+              <motion.button
+                whileTap={{ scale: 1.2 }}
+                className="buy__btn store__btn"
+              >
+                <Link to="/shop">Visit Store</Link>
+              </motion.button>
             </Col>
             <Col lg="6" md="12" className="text-end counter__img">
               <img src={counterimg} alt="" />
@@ -122,7 +126,7 @@ const Home = () => {
       <section className="new__arrivals">
         <Container>
           <Row>
-          <Col lg="12" className="text-center mb-6">
+            <Col lg="12" className="text-center mb-6">
               <h2 className="section__title mb-5">New Arrivals</h2>
             </Col>
             {/* <ProductList data={bed} /> */}
@@ -132,9 +136,9 @@ const Home = () => {
         </Container>
       </section>
       <section className="popular__categories">
-      <Container>
+        <Container>
           <Row>
-          <Col lg="12" className="text-center mb-5">
+            <Col lg="12" className="text-center mb-5">
               <h2 className="section__title mb-4">Popular Categories</h2>
             </Col>
             {/* <ProductList data={table} /> */}
