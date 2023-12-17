@@ -35,6 +35,7 @@ const Home = () => {
     // const filteredTableProducts = products.filter(
     //   (item) => item.category == "table"
     // );
+
     const filteredMobileProducts = products.filter(
       (item) => item.category == "mobile"
     );
@@ -48,6 +49,7 @@ const Home = () => {
     setBestsales(filteredBestsalseProducts);
     // setBed(filteredBedProducts);
     // setTable(filteredTableProducts);
+
     setWirelessProducts(filteredWirelessProducts);
     setMobileProducts(filteredMobileProducts);
     setPopularProducts(filteredPopularProducts);
